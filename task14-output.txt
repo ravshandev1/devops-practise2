@@ -1,0 +1,1 @@
+{"domain":"k.ravshandev.uz","endpoint":"/check-ingress","full_path:":"k.ravshandev.uz/check-ingress"}

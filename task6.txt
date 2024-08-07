@@ -1,0 +1,2 @@
+NAME                               READY   STATUS    RESTARTS   AGE
+nginx-named-port-8884996f7-4fzgs   1/1     Running   0          10m

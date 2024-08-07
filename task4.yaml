@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    application: v1
+  name: nginx-named-port
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      application: v1
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        application: v1
+    spec:
+      containers:
+      - image: nginx:1.18
+        name: nginx
+        ports:
+        - name: http-port
+          containerPort: 80
+        resources: {}
+status: {}

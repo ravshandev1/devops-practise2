@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: flaskapp
+  name: flaskapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: flaskapp
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: flaskapp
+    spec:
+      containers:
+      - image: nvrbckdown/flask-app:v1
+        name: flask-app
+        ports:
+        - containerPort: 5000
+        envFrom:
+        - configMapRef:
+            name: my-config
+        - secretRef:
+            name: my-secret
+        resources:
+          limits:
+            cpu: "200m"
+            memory: "128Mi"
+          requests:
+            cpu: "100m"
+            memory: "64Mi"
+status: {}
